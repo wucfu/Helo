@@ -12,6 +12,7 @@
         <module>jvm</module>
         <module>design-patterns</module>
         <module>common</module>
+        <module>freemarker</module>
     </modules>
     <packaging>pom</packaging>
 

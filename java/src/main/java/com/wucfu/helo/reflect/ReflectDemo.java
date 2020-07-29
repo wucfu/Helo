@@ -1,7 +1,5 @@
 package com.wucfu.helo.reflect;
 
-import com.demo.common.bean.Person;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.HashMap;

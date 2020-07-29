@@ -1,6 +1,5 @@
 package com.wucfu.helo.proxy.jdk;
 
-import com.demo.proxy.jdk.UserService;
 
 /**
  * @ClassName UserServiceImpl
