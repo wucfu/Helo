@@ -1,23 +1,37 @@
 package com.wucfu.helo.string;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class StringDemo {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
 
         // String 的不可变性
-        changeStringValue();
+        // changeStringValue();
 
+        // UUID
+        // System.out.println(UUID.randomUUID().toString());
 
+        // 核心数
+        // System.out.println(Runtime.getRuntime().availableProcessors());
+        //
+//        System.out.println(10 >> 8);
+        System.out.println("123456".substring(0,6));
 
+        LocalDate startDate = LocalDate.parse("2021-08-01");
+        LocalDate endDate = LocalDate.parse("2021-08-11");
+        System.out.println(startDate.until(endDate, ChronoUnit.DAYS));
     }
+
 
     /**
      * String的不可变性
      */
-    public static void changeStringValue() throws Exception{
+    public static void changeStringValue() throws Exception {
         /** 通过反射修改 **/
         String s = "Hello World";
         System.out.println("---------------------------");
@@ -64,19 +78,5 @@ public class StringDemo {
         System.out.println("b = " + b);
     }
 
-    /**
-     * 格式化
-     */
-    public static void formatDigit(){
-        // 格式化两位小数，不能四舍五入
-        NumberFormat nf= NumberFormat.getInstance();
-        nf.setMaximumFractionDigits(2);
-        System.out.println("格式化后显示数字："+nf.format(10000000));
-        System.out.println("格式化后显示数字："+nf.format(10000.345));
-
-        // 四舍五入
-        DecimalFormat df = new DecimalFormat("0.00");
-        System.out.println(Float.parseFloat(df.format(10.267)));
-    }
 
 }

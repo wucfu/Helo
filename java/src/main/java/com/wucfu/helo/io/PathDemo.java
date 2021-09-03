@@ -3,14 +3,25 @@ package com.wucfu.helo.io;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author wuchangfu
  * @description
  * @date 2020-06-28 10:52
  */
-public class PathHelo {
-    public static void main(String[] args) throws Exception{
+public class PathDemo {
+    public static void main(String[] args) throws Exception {
+        // java8一行代码读取文件
+        Files.lines(Paths.get("D:\\jd.txt"), StandardCharsets.UTF_8).forEach(System.out::println);
+    }
+
+    public void readPath() throws Exception {
         System.out.println("*****************直接路径*****************");
 
         File f1 = new File("helo");
@@ -21,15 +32,15 @@ public class PathHelo {
 
         File f3 = new File("/helo");
         System.out.println("'./helo'的绝对路径：" + f3.getAbsoluteFile() + " ,文件是否存在：" + f3.exists());
-        System.out.println("***********根据类加载器获取路径************");
 
-        ClassLoader cl = PathHelo.class.getClassLoader();
+        System.out.println("***********根据类加载器获取路径************");
+        ClassLoader cl = PathDemo.class.getClassLoader();
         URL url = cl.getResource("helo");
         File f4 = new File(url.getPath());
-        System.out.println("'helo'的路径："+ url.getPath() + " ,文件是否存在：" + f4.exists());
+        System.out.println("'helo'的路径：" + url.getPath() + " ,文件是否存在：" + f4.exists());
 
         System.out.println("**********遍历指定目录下的所有文件***********");
-        File temp = new File(PathHelo.class.getClassLoader().getResource("temp").getPath());
+        File temp = new File(PathDemo.class.getClassLoader().getResource("temp").getPath());
         listFiles(temp);
 
     }
@@ -68,11 +79,11 @@ public class PathHelo {
 
     public static void listFiles(File file) throws IOException {
 
-        if (!file.exists()){
+        if (!file.exists()) {
             return;
         }
         if (file.isFile()) {
-            System.out.println("路径：" + file.getParent()+ ",文件：" + file.getName());
+            System.out.println("路径：" + file.getParent() + ",文件：" + file.getName());
         }
 
         if (file.isDirectory()) {

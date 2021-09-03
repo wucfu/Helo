@@ -1,3 +1,47 @@
+# maven ignore
+target/
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
 *.iml
-target
-.idea
+*.iws
+
+# temp ignore
+*.doc
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+sh.exe.stackdump
+
+# console static ignore
+Bifrost_chronus
+ConfigCenter_chronus
+GaeaConfigCenter_chronus
+GaeaConfigCenter_chronus-executor
+
+# log ignore
+*catalina.home*/
+
+# loghub ignore
+**/logs/*
+/logs/*
+*.gz
+**_log*
+**loghub*
+

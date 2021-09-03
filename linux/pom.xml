@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>java</artifactId>
+    <artifactId>linux</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -23,14 +23,22 @@
         </plugins>
     </build>
     <dependencies>
-        <!--动态代理-->
-        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>2.2.2</version>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
         </dependency>
-    </dependencies>
+        <!--自身工程common-->
+        <dependency>
+            <groupId>com.wucfu.helo</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
+
+
+
+    </dependencies>
 
 </project>

@@ -13,6 +13,8 @@
         <module>design-patterns</module>
         <module>common</module>
         <module>freemarker</module>
+        <module>linux</module>
+        <module>redis</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -18,7 +18,7 @@ make install
 - 安装zlib库  
 ```shell script
 tar -zxvf zlib-1.2.11.tar.gz
-cd /app/appopt/zlib-1.2.11
+cd zlib-1.2.11
 ./configure --prefix=/app/appopt/nginx/env/zlib-1.2.11
 make
 make install
@@ -27,7 +27,7 @@ make install
 - 安装openssl  
 ```shell script
 tar -zxvf openssl-1.0.1t.tar.gz
-cd /app/appopt/openssl-1.0.1t
+cd openssl-1.0.1t
 ./config --prefix=/app/appopt/nginx/env/openssl-1.0.1t
 make depend
 make
@@ -39,7 +39,8 @@ make install
 - 安装nginx  
 由于依赖的环境是在默认路径下安装的，因此安装nginx时需要指定它所依赖的环境的路径
 ```shell script
-cd /app/appopt/nginx-1.14.0
+tar -zxvf nginx-1.14.0.tar.gz
+cd nginx-1.14.0
 # 创建日志目录：mkdir logs
 ./configure --prefix=/app/appopt/nginx/nginx-1.14.0 --conf-path=/app/appopt/nginx/nginx-1.14.0/nginx.conf --with-http_stub_status_module --with-http_ssl_module --with-file-aio --with-http_realip_module --with-stream --with-pcre=/app/appopt/nginx/pcre-8.39 --with-zlib=/app/appopt/nginx/zlib-1.2.11 --with-openssl=/app/appopt/nginx/openssl-1.0.1t
 make 
@@ -110,3 +111,4 @@ nginx -h
 
 ```
 ## nginx配置
+
